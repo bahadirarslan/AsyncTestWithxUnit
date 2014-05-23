@@ -8,7 +8,13 @@ using Xunit;
 namespace AsyncTest.Tests {
     public class XunitTest {
         [Fact]
-        public async void XunitTestMethod_Async() {
+        public async Task XunitTestMethod_Async() {
+            Program p = new Program();
+            string result = await p.AsyncTestMethod();
+            Assert.Equal("Ok", result);
+        }
+          [Fact]
+        public async void XunitTestMethod_Async_Void() {
             Program p = new Program();
             string result = await p.AsyncTestMethod();
             Assert.Equal("Ok", result);
